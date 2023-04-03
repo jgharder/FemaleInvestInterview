@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a24dec0ae0634c1db701f38b92deae3f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_e6a6703e96ce445fbdfb41478ed21e80 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_a9c0e3d0e3054d05b7cc84710067cc47 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_cbf6dd80008e488b89736d595c9ee803 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_a24dec0ae0634c1db701f38b92deae3f }}/appsvc/staticsite:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_a9c0e3d0e3054d05b7cc84710067cc47 }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Octopus-Production'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f95877f741a54a73bcb473a0781f73d7 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_a24dec0ae0634c1db701f38b92deae3f }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e582cc9eafbc465f863f72114aced263 }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_a9c0e3d0e3054d05b7cc84710067cc47 }}/appsvc/staticsite:${{ github.sha }}'
