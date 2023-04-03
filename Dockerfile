@@ -1,13 +1,10 @@
-FROM node:18
-
+FROM node:18-alpine
 WORKDIR /.
+COPY package.json package-lock.json ./
 
-COPY package*.json ./
+RUN npm install 
 
-RUN npm install
-
-COPY . .
-
+COPY . /src
 EXPOSE 3000
 
-CMD [ "node", "octopus.js" ]
+CMD ["node", "octopus.js"]
