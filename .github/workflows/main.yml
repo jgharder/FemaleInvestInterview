@@ -19,7 +19,7 @@ jobs:
       - run: npm run build
       - run: npm test
       - name: Deploy to production
-        uses: easingthemes/ssh-deploy@v2.1.8
+        uses: easingthemes/ssh-deploy@v4.1.8
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         with:
