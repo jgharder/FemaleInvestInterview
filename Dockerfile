@@ -1,5 +1,5 @@
 FROM node:18-alpine
-WORKDIR /.
+WORKDIR /app
 COPY package.json package-lock.json ./
 
 RUN npm install 
@@ -7,4 +7,4 @@ RUN npm install
 COPY . .
 EXPOSE 3000
 
-CMD ["node", "Octopus.js"]
+CMD ["node", "octopus.js"]
