@@ -1,0 +1,12 @@
+{
+  "name": "femaleinvestinterview",
+  "version": "1.0.0",
+  "description": "App for Female Invest interview",
+  "main": "octopus.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node octopus.js"
+  },
+  "keywords": []
+}
