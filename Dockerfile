@@ -3,7 +3,7 @@ WORKDIR /.
 COPY package.json ./
 
 RUN npm install 
-RUN PWD
+RUN pwd
 
 COPY . .
 EXPOSE 3000
